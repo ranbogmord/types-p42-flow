@@ -1,0 +1,11 @@
+{
+  "name": "types-p42-flow",
+  "version": "1.0.0",
+  "description": "Typescript definitions for Parallel42 Flow Widgets",
+  "keywords": [],
+  "author": "John Eriksson <root@ranbogmord.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^4.9.5"
+  }
+}
