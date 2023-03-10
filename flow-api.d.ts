@@ -291,6 +291,17 @@ declare global {
         windSpeedUnitString: string
     }
 
+    interface SunPosition {
+        azimuth: number
+        altitude: number
+        zenith: number
+        azimuthDegrees: number
+        altitudeDegrees: number
+        zenithDegrees: number
+        declination: number
+        at: number
+    }
+
     var $api: {
         variables: {
             get: <T>(name: string, type: string) => T
@@ -345,7 +356,9 @@ declare global {
             find_metar_from_coords: (lat: number, lon: number, callback: (metar: WeatherMetar|null) => void) => void
             set_3d_thermals: (state: boolean) => void
             get_3d_thermals: () => boolean
-            get_sun_position: () => unknown
+        }
+        time: {
+            get_sun_position: () => SunPosition
             get_sim_time_local: () => Date
             set_sun_offset_utc: (offset: number) => void
             set_local_time: (seconds: number) => void

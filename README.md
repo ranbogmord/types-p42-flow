@@ -6,7 +6,7 @@
 - Airport `metar`
 - Weather preset `windLayers`
 - Weather metar `layers`, `phenomena`, `vis`
-- A couple of params in the default APIs, such as `error` for the `find_metar_from_coords` and the return type of `get_sun_position`
+- A couple of params in the default APIs, such as `error` for the `find_metar_from_coords`
 - The Twitch functions and interfaces are guessed from the Flow documentation, I don't have the ability to verify these
 - Probably something else, Issues/PRs welcome
 
