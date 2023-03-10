@@ -11,7 +11,11 @@
 - Probably something else, Issues/PRs welcome
 
 ## Installation
-Install `types-p42-flow` and add it to your `typeRoots` in `tsconfig.json`.
+Install `types-p42-flow` and add it to your `include` in `tsconfig.json`.
+
+```
+npm install -D types-p42-flow
+```
 
 This would be a good starting point:
 ```json
@@ -28,11 +32,28 @@ This would be a good starting point:
     "noImplicitAny": true,
     "strictNullChecks": true,
     "strictFunctionTypes": true,
-    "noImplicitThis": false,
-    "typeRoots": ["node_modules/types-p42-flow"]
+    "noImplicitThis": false
   },
-  "include": ["**/*.ts"]
+  "include": [
+    "node_modules/types-p42-flow",
+    "**/*.ts"
+  ]
 }
 ```
 
 Using the above, compile using `npx tsc` to generate a `code.js` file.
+
+## Datastore
+The variable `this.store` is defined as a `Record<string, unknown>`. If you want type support for your datastore vars, you can override this using the `Store` interface:
+```typescript
+declare module global {
+    interface Store {
+        active: boolean,
+        another_prop: boolean
+    }
+}
+this.store = {
+  active: false,
+  another_prop: false
+}
+```
