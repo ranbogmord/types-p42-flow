@@ -4,5 +4,9 @@
   "description": "Typescript definitions for Parallel42 Flow Widgets",
   "keywords": [],
   "author": "John Eriksson <root@ranbogmord.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/ranbogmord/types-p42-flow"
+  }
 }
