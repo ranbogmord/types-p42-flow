@@ -408,10 +408,10 @@ declare global {
         label: string
         image?: string
         subtext?: string
-        execute: () => boolean|undefined
+        execute?: () => boolean|undefined
         is_text?: boolean
     }
-    function search(prefixes: string[], callback: (query: string, result: SearchResult[]) => void): void
+    function search(prefixes: string[], callback: (query: string, callback: (result: SearchResult[]) => void) => void): void
 
     function html_created(callback: (el: HTMLElement) => void): void
 
