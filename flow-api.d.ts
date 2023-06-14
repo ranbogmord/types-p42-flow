@@ -207,6 +207,22 @@ declare global {
         html: string
         userTag: number
     }
+
+    interface WeatherGustWaveData {
+        __Type: string;
+        dvAngleRad: WeatherRangeDataValue;
+        dvIntervalS: WeatherRangeDataValue;
+        dvSpeedMultiplier: WeatherRangeDataValue;
+    }
+    
+    interface WeatherWindLayerData {
+        __Type: string;
+        dvAltitude: WeatherRangeDataValue;
+        dvAngleRad: WeatherRangeDataValue;
+        dvSpeed: WeatherRangeDataValue;
+        gustWaveData: WeatherGustWaveData;
+    }
+
     interface WeatherCloudLayer {
         __Type: string
         dvDensityMultiplier: WeatherRangeDataValue
@@ -240,10 +256,10 @@ declare global {
         __Type: string
         index: number
         sPresetName: string
-        blsValid: boolean
-        blsRemovable: boolean
+        bIsValid: boolean
+        bIsRemovable: boolean
         tCloudLayers: WeatherCloudLayer[]
-        tWindLayers: unknown[]
+        tWindLayers: WeatherWindLayerData[]
         oSettings: WeatherPresetSettings
         oConfig: WeatherPresetConfig
     }
@@ -341,6 +357,7 @@ declare global {
                 lon: number,
                 lat: number,
                 radius: number,
+                limit: number,
                 callback_added: (added: Airport[]) => void,
                 callback_removed: (removed: Airport[]) => void,
                 callback_failed: (error: unknown) => void,
@@ -381,10 +398,11 @@ declare global {
     type TileStyle = 'armed'|'active'|'error'|null
 
     interface SingleSettingsDefinition {
-        type: 'checkbox',
+        type: 'checkbox'|'text',
         label: string,
         value: boolean,
-        changed: (value: boolean) => void
+        description: string,
+        changed: (value: boolean|string) => void
     }
     interface SettingsDefinition {
         [key: string]: SingleSettingsDefinition
