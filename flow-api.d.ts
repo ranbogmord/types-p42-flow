@@ -400,8 +400,8 @@ declare global {
     interface SingleSettingsDefinition {
         type: 'checkbox'|'text',
         label: string,
-        value: boolean,
-        description: string,
+        value: boolean|string,
+        description?: string,
         changed: (value: boolean|string) => void
     }
     interface SettingsDefinition {
