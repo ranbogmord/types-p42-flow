@@ -1,6 +1,6 @@
 {
   "name": "types-p42-flow",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "description": "Typescript definitions for Parallel42 Flow Widgets",
   "keywords": [],
   "author": "John Eriksson <root@ranbogmord.com>",

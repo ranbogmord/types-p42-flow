@@ -4,7 +4,6 @@
 - Departure/Arrival `commonLegs`
 - Approach `icaos`
 - Airport `metar`
-- Weather preset `windLayers`
 - Weather metar `layers`, `phenomena`, `vis`
 - A couple of params in the default APIs, such as `error` for the `find_metar_from_coords`
 - The Twitch functions and interfaces are guessed from the Flow documentation, I don't have the ability to verify these
@@ -57,3 +56,6 @@ this.store = {
   another_prop: false
 }
 ```
+
+## Sim settings
+Included in the repo are Enums for the different Select-type settings values. These are essentially human readable replacements for the index parameter.
