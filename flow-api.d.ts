@@ -432,13 +432,18 @@ declare global {
   }
   type TileStyle = 'armed' | 'active' | 'error' | null
 
-  interface SingleSettingsDefinition {
-    type: 'checkbox' | 'text',
+  type SingleSettingsDefinition = {
     label: string,
-    value: boolean | string,
     description?: string,
-    changed: (value: boolean | string) => void
-  }
+  } & ({
+    type: 'checkbox',
+    value: boolean,
+    changed: (value: boolean) => void
+  } | {
+    type: 'text',
+    value: string
+    changed: (value: string) => void
+  })
   interface SettingsDefinition {
     [key: string]: SingleSettingsDefinition
   }
