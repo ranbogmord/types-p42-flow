@@ -516,6 +516,8 @@ declare global {
     command: {
       command: string
       channel?: string
+      botCommand?: string
+      botCommandParams?: string
     }
     parameters: string
   }
