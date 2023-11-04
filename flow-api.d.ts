@@ -475,14 +475,8 @@ declare global {
 
   interface TwitchMessage {
     tags: {
-      "badge-info"?: {
-        founder?: string
-      }
-      badges?: {
-        moderator?: string
-        founder?: string
-        bits?: string
-      }
+      "badge-info"?: Record<string, string>
+      badges?: Record<string, string>
       color?: string
       "display-name"?: string
       emotes?: string
